@@ -1,6 +1,7 @@
 {
   "name": "burger-maker",
   "version": "1.0.0",
+  "type": "module",
   "scripts": {
     "start": "concurrently \"npm run server\" \"npm run client\"",
     "server": "nodemon server/index.js",

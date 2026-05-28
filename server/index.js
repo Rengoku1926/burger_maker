@@ -1,13 +1,14 @@
-require('dotenv').config()
-const express = require('express')
-const cors = require('cors')
-const mongoose = require('mongoose')
-const path = require('path')
-
-const ordersRouter = require('./routes/orders')
+import 'dotenv/config'
+import express from 'express'
+import cors from 'cors'
+import mongoose from 'mongoose'
+import path from 'path'
+import { fileURLToPath } from 'url'
+import ordersRouter from './routes/orders.js'
 
 const app = express()
 const PORT = process.env.PORT || 8000
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 app.use(cors())
 app.use(express.json())
@@ -24,9 +25,7 @@ if (process.env.NODE_ENV === 'production') {
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
     console.log('MongoDB connected')
-    app.listen(PORT, () => {
-      console.log(`Server running on port ${PORT}`)
-    })
+    app.listen(PORT, () => console.log(`Server running on port ${PORT}`))
   })
   .catch(err => {
     console.error('MongoDB connection failed:', err.message)
