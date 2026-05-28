@@ -73,6 +73,10 @@ body {
   font-size: 2rem;
   font-weight: 700;
   letter-spacing: -0.5px;
+  color: var(--text);
+}
+
+.app-header h1 .header-text {
   background: linear-gradient(135deg, #fff 30%, var(--accent));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -418,6 +422,7 @@ body {
 
 .price-summary {
   padding: 20px;
+  margin-top: 8px;
 }
 
 .split-warning {
@@ -605,6 +610,17 @@ body {
   box-shadow: 0 0 0 3px var(--accent-glow);
 }
 
+/* override browser autofill white background */
+.field input:-webkit-autofill,
+.field input:-webkit-autofill:hover,
+.field input:-webkit-autofill:focus,
+.field textarea:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #1e1b30 inset;
+  -webkit-text-fill-color: var(--text);
+  caret-color: var(--text);
+  border-color: var(--glass-border);
+}
+
 .field-error {
   color: var(--danger);
   font-size: 0.78rem;
@@ -620,15 +636,15 @@ body {
   display: flex;
   align-items: center;
   gap: 6px;
-  padding: 8px 16px;
-  background: var(--glass);
-  border: 1px solid var(--glass-border);
+  padding: 9px 18px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.22);
   border-radius: 30px;
   cursor: pointer;
   font-size: 0.85rem;
   font-family: 'Inter', sans-serif;
   font-weight: 500;
-  color: var(--text-muted);
+  color: var(--text);
   transition: all 0.15s;
 }
 
@@ -641,11 +657,12 @@ body {
   border-color: var(--accent);
   color: var(--accent);
   box-shadow: 0 0 10px var(--accent-glow);
+  font-weight: 600;
 }
 
 .payment-chip:hover:not(.selected) {
-  border-color: rgba(255,255,255,0.2);
-  color: var(--text);
+  background: rgba(255, 255, 255, 0.13);
+  border-color: rgba(255, 255, 255, 0.35);
 }
 
 .form-actions {

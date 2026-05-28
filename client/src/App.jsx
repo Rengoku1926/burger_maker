@@ -74,7 +74,7 @@ export default function App() {
     return (
       <div className="app">
         <header className="app-header">
-          <h1>🍔 Burger Maker</h1>
+          <h1>🍔 <span className="header-text">Burger Maker</span></h1>
         </header>
         <Cart
           slices={burger.slices}
@@ -100,7 +100,7 @@ export default function App() {
     return (
       <div className="app">
         <header className="app-header">
-          <h1>🍔 Burger Maker</h1>
+          <h1>🍔 <span className="header-text">Burger Maker</span></h1>
         </header>
         <CheckoutForm
           onSubmit={handleCheckoutSubmit}
@@ -116,7 +116,7 @@ export default function App() {
   return (
     <div className="app">
       <header className="app-header">
-        <h1>🍔 Burger Maker</h1>
+        <h1>🍔 <span className="header-text">Burger Maker</span></h1>
         <p className="tagline">Stack it your way</p>
       </header>
 
