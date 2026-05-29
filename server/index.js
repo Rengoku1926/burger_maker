@@ -10,8 +10,13 @@ const app = express()
 const PORT = process.env.PORT || 8000
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
+const allowedOrigins = [
+  'http://localhost:5173',
+  process.env.FRONTEND_URL,
+].filter(Boolean)
+
 app.use(cors({
-  origin: process.env.FRONTEND_URL || 'http://localhost:5173',
+  origin: allowedOrigins,
 }))
 app.use(express.json())
 

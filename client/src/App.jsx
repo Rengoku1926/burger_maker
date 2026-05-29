@@ -30,7 +30,7 @@ export default function App() {
         quantity: burger.qty,
         totalPrice: burger.total,
       }
-      const base = import.meta.env.VITE_API_URL || ''
+      const base = (import.meta.env.VITE_API_URL || '').replace(/\/$/, '')
       const res = await fetch(`${base}/api/orders`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
